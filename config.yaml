@@ -1,0 +1,8 @@
+client_id: '0XgCtUySoei1m0c0C50rPg'
+client_secret: 'mtTAgMC-ZKNoCrMjsI99nyDbQ0W31Q'
+user_agent: 'topic modeling'
+
+subs : 
+- 'Bitcoin'
+- 'CryptoMarkets'
+- 'CryptoCurrency'
