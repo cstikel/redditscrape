@@ -69,4 +69,4 @@ for sub in params['subs']:
 
 
 
-posts.to_csv(f'CryptoPulls{today}.csv')
+posts.to_csv(f'/Users/chasstikeleather/Documents/Projects/redditscrape/data/raw/CryptoPulls{today}.csv')
