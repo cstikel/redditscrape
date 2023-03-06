@@ -46,7 +46,6 @@ def comment_table(comment_list, post_url):
     
     df = pd.DataFrame(comment_list)
     df['post_url'] = post_url
-    print(df.columns)
     df.columns = ['comments', 'post_url']
 
     return df
@@ -57,7 +56,7 @@ posts = pd.DataFrame()
 for sub in params['subs']:
     print("Scraping: "+sub)
     temp_posts = return_top_post(sub, 'day', 20)
-    temp_posts = temp_posts[temp_posts['num_comments'] != 0]
+    temp_posts = temp_posts[temp_posts['num_comments'] > 5]
     comment_df = pd.DataFrame()
     for post in temp_posts.url:
         print("Scraping Comments from: "+ post)
@@ -68,5 +67,5 @@ for sub in params['subs']:
     posts = pd.concat([posts, temp_posts], ignore_index=True )
 
 
-
+## TODO: Drop index, and post_url columns.
 posts.to_csv(f'/Users/chasstikeleather/Documents/Projects/redditscrape/data/raw/CryptoPulls{today}.csv')
